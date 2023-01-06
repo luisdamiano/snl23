@@ -1,0 +1,69 @@
+% Math -------------------------------------------------------------------------
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools} % provides: coloneqq
+
+%% Double stroke
+\RequirePackage{dsfont} % provides: mathds
+
+%% Bold math
+\RequirePackage{bm}
+%% https://tex.stackexchange.com/a/222749/225233
+\def\BB#1{\mathbb{#1}}
+\def\Bx#1{\bm{#1}}
+\def\dx#1{\,\mathrm{d}#1}
+
+%% Numbers
+\def\Reals{\mathbb{R}}
+\def\RealsP{\Reals^+}
+\def\Ints{\mathbb{N}}
+
+%% Punctuation
+\def\funcolon{\mathpunct{:}}
+\def\colonfun{\mathpunct{:}}
+
+%% Logic
+\def\forany{\,\forall\,}
+
+%% Operators
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\diag}{\text{diag}}
+
+%% Partials
+\newcommand{\pde}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\pdeS}[2]{\frac{\partial^2#1}{\partial#2}}
+
+%% Functions
+\newcommand{\expl}[1]{\exp\left\{#1\right\}}
+
+%% Convergence
+\newcommand{\bigO}{\mathcal{O}}
+
+%% Linear algebra
+\DeclareMathOperator{\trsym}{tr}
+\newcommand\tr[1]{\trsym\left(#1\right)}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\transp}{\top}
+\newcommand{\leftdivision}{\text{\textbackslash}}
+
+%% Semantics
+\renewcommand{\implies}{\Rightarrow}
+
+% Stats ------------------------------------------------------------------------
+%% Operators
+%% Consider DeclarePairedDelimiter to control sizing consistently
+%% (MMarcelKrger at libera.chat)
+\DeclareMathOperator{\evsym}{E}
+\newcommand\EV[1]{\evsym\left\langle#1\right\rangle}
+\DeclareMathOperator{\vsym}{V}
+\newcommand\VV[1]{\vsym\left\langle#1\right\rangle}
+\DeclareMathOperator{\corsym}{Cor}
+\newcommand\COR[1]{\corsym\left\langle#1\right\rangle}
+\DeclareMathOperator{\covsym}{Cov}
+\newcommand\COV[1]{\covsym\left\langle#1\right\rangle}
+\DeclareMathOperator{\sesym}{SE}
+\newcommand\SE[1]{\sesym\left\langle#1\right\rangle}
+
+\newcommand{\iid}{\smash{\overset{\text{\tiny iid}}{\sim}}}

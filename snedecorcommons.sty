@@ -1,0 +1,37 @@
+% Math -------------------------------------------------------------------------
+\RequirePackage{snedecormath}
+
+%% TODO Change \def for safer \newcommand
+
+% Tables -----------------------------------------------------------------------
+%% left, center, and right aligned equal-width columns
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+%% newline in cells
+\RequirePackage{makecell}
+
+%% color in cells
+\RequirePackage{colortbl}
+
+%% publication quality tables
+\RequirePackage{booktabs}
+
+% Images -----------------------------------------------------------------------
+\RequirePackage{overpic}
+
+% Resizing ---------------------------------------------------------------------
+\RequirePackage{adjustbox}
+
+% Footnotes --------------------------------------------------------------------
+%% Unnumbered footnote
+%% https://tex.stackexchange.com/a/170512/225233
+\let\svthefootnote\thefootnote%
+\textheight 1in
+\newcommand\blankfootnote[1]{%
+  \let\thefootnote\relax\footnotetext{#1}%
+  \let\thefootnote\svthefootnote%
+}
