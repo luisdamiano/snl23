@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+  [
+  txtbox1/.style={rectangle,align=center,draw=blue!50,fill=blue!20,thick},
+  every label/.style={font=\itshape\footnotesize}
+  ]
+  \tikzset{every node/.style={align=center}}
+  \node (aspect1b)   at (0, 0)                        [text width=15ex] {
+    Model tuning\\{\footnotesize \itshape (learning)}
+  };
+  \node (aspect2)    [below=of aspect1b]              [text width=15ex] {
+    Distance\\{\footnotesize $d(X_i, X_j)$}
+  };
+  \node (aspect3)    [below=of aspect2]               [text width=15ex] {
+    Weights\\{\footnotesize \itshape (relevance)}
+  };
+  %%%%%
+  \node (solution1b) [right=of aspect1b]              [text width=25ex] {
+    Automatic\\Relevance\\Determination\cite{neal1996,neal1998}
+  };
+  %%%%%
+  \node (solution2b) [txtbox1] [right=of solution1b]  [text
+  width=25ex]
+  [visible on=<2->]{
+    Automatic\\\textit{Dynamic Relevance}\\Determination
+  };
+  %%%%%
+  \node (eq1b) [below=of solution1b] [text width=25ex] {
+    % $\sum_{k=1}^K \frac{{(x_{i, k} - x_{j, k})}^2}{\ell_k^2}$
+    $\sum_{k=1}^K \theta_k {(x_{i, k} - x_{j, k})}^2$
+  };
+  % \node (eq2b) [below=of solution2b] [text width=25ex]
+  \node (eq2b) [right=of eq1b] [text width=25ex]
+  [visible on=<2->]{
+    % $\int_{\mathcal{T}}
+    % \omega(t)
+    % {\left(X_i(t) - X_j(t) \right)}^2 \mathrm{d}t$
+    $\sum_{k=1}^K \Delta t_k \omega(t_k) {(x_{i, k} - x_{j, k})}^2$
+  };
+  %%%%%
+  \node (par1b) [below=of eq1b] [text width=25ex]{
+    % $\ell^{-2}_1, \cdots, \ell^{-2}_K > 0$
+    $\theta_1, \cdots, \theta_K > 0$
+  };
+  % \node (par2b) [below=of eq2b] [text width=25ex]
+  \node (par2b) [right=of par1b] [text width=25ex]
+  [visible on=<2->]{
+    $\omega(t): \mathcal{T} \to \mathbb{R}^+$
+  };
+  \draw[shorten >=1ex,shorten <=1ex,line width=1pt]
+  [visible on=<2->] [->] (solution1b.east) -- (solution2b.west);
+  % \draw[shorten >=1ex,shorten <=1ex,line width=1pt]
+  % [visible on=<3->] [->] (eq1b.east) -- (eq2b.west);
+  % \draw[shorten >=1ex,shorten <=1ex,line width=1pt]
+  % [visible on=<4->] [->] (par1b.east) -- (par2b.west);
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
