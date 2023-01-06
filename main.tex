@@ -557,17 +557,18 @@
 
   \begin{figure}
       \centering
-    \includegraphics[height=18em]{inc/mls_weight_posterior_oaat.png}
+    \includegraphics[height=17em]{inc/mls_weight_posterior_oaat.png}
   \end{figure}
 
-  % Figure with posterior weights for fiGP
-
-  % If you only did optimization, you'd only get the pluses. By running full
-  % bayes, I get the uncertainty (interval)
-
-  % Consider showing the as a continuous function
-
-  % Consider one posterior sample
+  \blankfootnote{
+    $
+    p(\omega(t) | \bm{X}, \bm{y})
+    \approx
+    \{
+    \omega_m(t) | \bm{X}, \bm{y}, \bm{\theta}_m
+    : m = 1, \dots, M\}
+    $
+  }
 \end{frame}
 
 \begin{frame}
